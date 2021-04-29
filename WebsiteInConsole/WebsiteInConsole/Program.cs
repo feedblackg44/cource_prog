@@ -1,12 +1,12 @@
 ﻿using System;
+using SiteLogic;
 
-namespace WebsiteInConsole
+namespace SiteInterface
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
