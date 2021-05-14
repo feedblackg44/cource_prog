@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SiteLogic
 {
+    [Serializable]
     public abstract class User
     {
         protected string _nickname;
@@ -16,5 +17,7 @@ namespace SiteLogic
         public string Nickname { get => _nickname; }
         public UserType Type { get => _type; }
         public static uint Amount { get => _amount; }
+        public abstract void ChangeName(string newName);
+        public abstract void ChangePass(string pass);
     }
 }

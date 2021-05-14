@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SiteLogic
 {
+    [Serializable]
     public class Theme
     {
         private string _name;

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SiteLogic
 {
+    [Serializable]
     public class Guest : User
     {
         public Guest()
@@ -13,6 +14,14 @@ namespace SiteLogic
             _login = null;
             _hashPass = null;
             _type = UserType.Guest;
+        }
+        public override void ChangeName(string newName)
+        {
+            throw new Exception("Please register to change name!");
+        }
+        public override void ChangePass(string pass)
+        {
+            throw new Exception("Please register to change pass!");
         }
     }
 }
