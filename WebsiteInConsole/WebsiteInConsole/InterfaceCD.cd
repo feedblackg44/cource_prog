@@ -3,7 +3,7 @@
   <Class Name="SiteInterface.Menu">
     <Position X="4.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAABAAAIAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAABAAAIAAAAACAAAAAAAAEAAAAAACAAAA=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -51,7 +51,7 @@ namespace SiteInterface
             choises.Add("2 - Choose a tag");
             choises.Add("3 - Show authors");
             choises.Add("4 - Show themes");
-            choises.Add("5 - Show news by date");
+            choises.Add("5 - Show news by month");
             choises.Add("6 - Show all news");
             choises.Add("7 - Create news");
             choises.Add("8 - Change name");
