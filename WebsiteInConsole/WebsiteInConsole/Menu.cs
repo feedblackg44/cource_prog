@@ -28,7 +28,7 @@ namespace SiteInterface
             string menuHead = "Hello, " + name + "!\n\n";
             List<string> choises = new List<string>(0);
             choises.Add("1 - Show rubrics");
-            choises.Add("2 - Show tags");
+            choises.Add("2 - Choose a tag");
             choises.Add("3 - Show authors");
             choises.Add("4 - Show themes");
             choises.Add("5 - Show news by month");
