@@ -28,7 +28,7 @@ namespace SiteInterface
             StateType state = StateType.NoOne;
             while (true)
             {
-                Menu.PrintLogo(name);
+                Menu.PrintLogo(site.Name);
 
                 try
                 {
@@ -45,7 +45,7 @@ namespace SiteInterface
                                 Console.Write("Write here your login: ");
                                 string login = Console.ReadLine();
                                 Console.Write("Write here your password: ");
-                                string pass = Tools.GetPass();
+                                string pass = Menu.GetPass();
                                 Console.WriteLine();
                                 Console.Write("Write here your nickname: ");
                                 string nickname = Console.ReadLine();
@@ -57,7 +57,7 @@ namespace SiteInterface
                                 Console.Write("Write here your login: ");
                                 string log = Console.ReadLine();
                                 Console.Write("Write here your password: ");
-                                string password = Tools.GetPass();
+                                string password = Menu.GetPass();
                                 Console.WriteLine();
                                 site.Login(log, password);
                                 state = StateType.Author;
@@ -67,9 +67,9 @@ namespace SiteInterface
                                 System.Environment.Exit(0);
                                 break;
                             default:
-                                Menu.PrintDefaultMenu(name);
+                                Menu.PrintDefaultMenu(site.Name);
                                 Console.Write("\nChoose a num from 0 to 3: ");
-                                choise = Tools.GetInt();
+                                choise = Menu.GetInt();
                                 break;
                         }
                     }
@@ -84,7 +84,7 @@ namespace SiteInterface
                                 int rubNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByRubric;
                                 Console.WriteLine("News in rubric {0}:", site.Rubrics[rubNum - 1]);
                                 Console.WriteLine(site.NewsByRubric(rubNum, out newsByRubric));
@@ -92,7 +92,7 @@ namespace SiteInterface
                                 int newsNumR = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByRubric[newsNumR - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -104,7 +104,7 @@ namespace SiteInterface
                                 string tag = Console.ReadLine();
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByTag;
                                 Console.WriteLine("News by tag {0}:", tag);
                                 Console.WriteLine(site.NewsByTag(tag, out newsByTag));
@@ -112,7 +112,7 @@ namespace SiteInterface
                                 int newsNumT = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByTag[newsNumT - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -126,7 +126,7 @@ namespace SiteInterface
                                 int authorNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByAuthor;
                                 Console.WriteLine("News by Author {0}:", site.Authors[authorNum - 1].Nickname);
                                 Console.WriteLine(site.NewsByAuthor(authorNum, out newsByAuthor));
@@ -134,7 +134,7 @@ namespace SiteInterface
                                 int newsNumA = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByAuthor[authorNum - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -148,7 +148,7 @@ namespace SiteInterface
                                 int themeNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByTheme;
                                 Console.WriteLine("News by theme number {0}:", themeNum);
                                 Console.WriteLine(site.NewsByTheme(themeNum, out newsByTheme));
@@ -156,7 +156,7 @@ namespace SiteInterface
                                 int newsNumTh = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByTheme[newsNumTh - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -168,7 +168,7 @@ namespace SiteInterface
                                 int monthNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByMonth;
                                 Console.WriteLine("News by month number {0}:", monthNum);
                                 Console.WriteLine(site.NewsByMonth(monthNum, out newsByMonth));
@@ -176,7 +176,7 @@ namespace SiteInterface
                                 int newsNumM = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByMonth[newsNumM - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -191,7 +191,7 @@ namespace SiteInterface
                                 int newsNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(site.AllNews[newsNum - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -206,7 +206,7 @@ namespace SiteInterface
                             default:
                                 Menu.PrintGuestMenu(site.CurUserName);
                                 Console.Write("\nChoose a num from 0 to 6: ");
-                                choise = Tools.GetInt();
+                                choise = Menu.GetInt();
                                 break;
                         }
                     }
@@ -221,7 +221,7 @@ namespace SiteInterface
                                 int rubNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByRubric;
                                 Console.WriteLine("News in rubric {0}:", site.Rubrics[rubNum - 1]);
                                 Console.WriteLine(site.NewsByRubric(rubNum, out newsByRubric));
@@ -229,7 +229,7 @@ namespace SiteInterface
                                 int newsNumR = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByRubric[newsNumR - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -241,7 +241,7 @@ namespace SiteInterface
                                 string tag = Console.ReadLine();
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByTag;
                                 Console.WriteLine("News by tag {0}:", tag);
                                 Console.WriteLine(site.NewsByTag(tag, out newsByTag));
@@ -249,7 +249,7 @@ namespace SiteInterface
                                 int newsNumT = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByTag[newsNumT - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -263,7 +263,7 @@ namespace SiteInterface
                                 int authorNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByAuthor;
                                 Console.WriteLine("News by Author {0}:", site.Authors[authorNum - 1].Nickname);
                                 Console.WriteLine(site.NewsByAuthor(authorNum, out newsByAuthor));
@@ -271,7 +271,7 @@ namespace SiteInterface
                                 int newsNumA = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByAuthor[authorNum - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -285,7 +285,7 @@ namespace SiteInterface
                                 int themeNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByTheme;
                                 Console.WriteLine("News by theme number {0}:", themeNum);
                                 Console.WriteLine(site.NewsByTheme(themeNum, out newsByTheme));
@@ -293,7 +293,7 @@ namespace SiteInterface
                                 int newsNumTh = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByTheme[newsNumTh - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -305,7 +305,7 @@ namespace SiteInterface
                                 int monthNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 List<News> newsByMonth;
                                 Console.WriteLine("News by month number {0}:", monthNum);
                                 Console.WriteLine(site.NewsByMonth(monthNum, out newsByMonth));
@@ -313,7 +313,7 @@ namespace SiteInterface
                                 int newsNumM = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(newsByMonth[newsNumM - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -328,7 +328,7 @@ namespace SiteInterface
                                 int newsNum = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Clear();
-                                Menu.PrintLogo(name);
+                                Menu.PrintLogo(site.Name);
                                 Console.WriteLine(site.AllNews[newsNum - 1]);
 
                                 Console.WriteLine("\nPress any key to back to main menu...");
@@ -355,7 +355,7 @@ namespace SiteInterface
                                 break;
                             case (8):
                                 Console.Write("Write your current password: ");
-                                string nPass = Tools.GetPass();
+                                string nPass = Menu.GetPass();
                                 Console.WriteLine();
                                 if (site.MatchPass(nPass))
                                 {
@@ -367,12 +367,12 @@ namespace SiteInterface
                                 break;
                             case (9):
                                 Console.Write("Write your current password: ");
-                                string cPass = Tools.GetPass();
+                                string cPass = Menu.GetPass();
                                 Console.WriteLine();
                                 if (site.MatchPass(cPass))
                                 {
                                     Console.Write("Write your new password: ");
-                                    string newPass = Tools.GetPass();
+                                    string newPass = Menu.GetPass();
                                     site.ChangeUserPass(newPass);
                                 }
 
@@ -386,7 +386,7 @@ namespace SiteInterface
                             default:
                                 Menu.PrintAuthorMenu(site.CurUserName);
                                 Console.Write("\nChoose a num from 0 to 10: ");
-                                choise = Tools.GetInt();
+                                choise = Menu.GetInt();
                                 break;
                         }
                     }
@@ -394,7 +394,7 @@ namespace SiteInterface
                 catch (Exception ex)
                 {
                     Console.Clear();
-                    Menu.PrintLogo(name);
+                    Menu.PrintLogo(site.Name);
 
                     Console.WriteLine(ex.Message);
                     Console.ReadKey();

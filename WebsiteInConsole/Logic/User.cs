@@ -9,15 +9,14 @@ namespace SiteLogic
     {
         protected string _nickname;
         protected UserType _type;
-        protected static uint _amount = 0;
+        protected static uint _guestsAmount = 0;
         protected string _login;
         protected string _hashPass;
         public string Login { get => _login; }
-        public string HashPass { get => _hashPass; }
         public string Nickname { get => _nickname; }
         public UserType Type { get => _type; }
-        public static uint Amount { get => _amount; }
         public abstract void ChangeName(string newName);
         public abstract void ChangePass(string pass);
+        public abstract bool CheckPass(string pass);
     }
 }

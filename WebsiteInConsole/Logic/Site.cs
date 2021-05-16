@@ -301,7 +301,7 @@ namespace SiteLogic
         {
             foreach (User i in _authors)
             {
-                if (i.Login == login && i.HashPass == Tools.CreateMD5(pass))
+                if (i.Login == login && i.CheckPass(pass))
                     return i;
             }
             return null;
